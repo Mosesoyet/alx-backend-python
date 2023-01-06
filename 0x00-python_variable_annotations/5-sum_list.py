@@ -8,4 +8,4 @@ def sum_list(input_list: list[float]) -> float:
     """
     return sum of list elemets
     """
-    return sum_list += i for i in input_list
+    return sum(input_list)
