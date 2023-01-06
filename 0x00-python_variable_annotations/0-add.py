@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Declare a function that takes two arguments 'a' and 'b'
 return the sum of the two
