@@ -13,7 +13,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Executes wait random n times
     """
-    wait_times = wait asyncio.gather(
+    wait_times = await asyncio.gather(
             *tuple(map(lambda _: wait_random(max_delay), range(n)))
             )
     return sorted(wait_times)
