@@ -36,8 +36,8 @@ class TestAccessNestedMap(unittest.TestCase):
 
 
     @parameterized.expand([
-        ({}, ('a',),),
-        ({'a': 1}, ('a', 'b'), 1),
+        ({}, ('a',), KeyError),
+        ({'a': 1}, ('a', 'b'), KeyError),
         ])
 
 
@@ -49,4 +49,5 @@ class TestAccessNestedMap(unittest.TestCase):
             ) -> None:
         """Raise exception for the above input
         """
-        self.assertRaises(access_nested_map(nested_map, path), expected)
+        with self.assertRaises(exception):
+            accss_nested_map(nested_map, path)
