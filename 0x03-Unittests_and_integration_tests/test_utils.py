@@ -36,19 +36,18 @@ class TestAccessNestedMap(unittest.TestCase):
 
 
     @parameterized.expand([
-        ({}, ('a',), KeyError),
+        ({}, ("a",), KeyError),
         ({'a': 1}, ('a', 'b'), KeyError),
-        ])
+    ])
     def test_access_nested_map_exception(
             self,
             nested_map: Dict,
             path: Tuple[str],
             exception: Exception,
             ) -> None:
-        """Raise exception for the above input
-        """
+        """Tests `access_nested_map`'s exception raising."""
         with self.assertRaises(exception):
-            accss_nested_map(nested_map, path)
+            access_nested_map(nested_map, path)
 
 
 class TestGetJson(unittest.TestCase):
@@ -71,9 +70,15 @@ class TestGetJson(unittest.TestCase):
 
 class TestMemoize(unittest.TestCase):
     '''Tests the `memoize` function.'''
+
+
     def test_memoize(self) -> None:
         """Tests `memoize`'s output."""
+
+
         class TestClass:
+
+
             def a_method(self):
                 return 42
 
