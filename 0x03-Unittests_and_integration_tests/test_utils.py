@@ -45,7 +45,7 @@ class TestAccessNestedMap(unittest.TestCase):
             self,
             nested_map: Dict,
             path: Tuple[str],
-            expected: Union[Dict, int]
+            exception: Exception,
             ) -> None:
         """Raise exception for the above input
         """
